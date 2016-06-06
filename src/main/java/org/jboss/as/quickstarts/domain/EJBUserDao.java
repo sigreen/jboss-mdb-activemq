@@ -16,18 +16,16 @@
  */
 package org.jboss.as.quickstarts.domain;
 
-import javax.ejb.Stateful;
-import javax.enterprise.inject.Alternative;
-import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+import javax.enterprise.inject.New;
 
-@Stateful
-@Alternative
+@New
+@Stateless
 public class EJBUserDao implements UserDao {
 
-    @Inject
     private EntityManager entityManager;
 
     public User getForUsername(String username) {

@@ -19,15 +19,16 @@ package org.jboss.as.quickstarts.mdb;
 import java.util.logging.Logger;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
+import javax.inject.Inject;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
-import javax.transaction.SystemException;
 
+import org.jboss.as.quickstarts.domain.EJBUserDao;
 import org.jboss.as.quickstarts.domain.User;
-import org.jboss.as.quickstarts.domain.UserDao;
 import org.jboss.ejb3.annotation.ResourceAdapter;
+import javax.enterprise.inject.New;
 
 /**
  * <p>
@@ -45,7 +46,9 @@ import org.jboss.ejb3.annotation.ResourceAdapter;
 public class InjectUserFromQueueMDB implements MessageListener {
 
     private final static Logger LOGGER = Logger.getLogger(InjectUserFromQueueMDB.class.toString());
-    private UserDao userDao;
+    
+    @Inject @New
+    private EJBUserDao userDao;
 
     /**
      * @see MessageListener#onMessage(Message)

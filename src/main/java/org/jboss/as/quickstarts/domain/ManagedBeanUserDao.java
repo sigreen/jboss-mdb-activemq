@@ -25,7 +25,6 @@ import javax.transaction.UserTransaction;
 
 public class ManagedBeanUserDao implements UserDao {
 
-    @Inject
     private EntityManager entityManager;
 
     @Inject
