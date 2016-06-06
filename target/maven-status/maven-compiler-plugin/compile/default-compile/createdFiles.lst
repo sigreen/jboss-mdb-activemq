@@ -1,0 +1,8 @@
+org/jboss/as/quickstarts/mdb/HelloWorldTopicMDB.class
+org/jboss/as/quickstarts/mdb/InjectUserFromQueueMDB.class
+org/jboss/as/quickstarts/domain/UserDao.class
+org/jboss/as/quickstarts/servlet/HelloWorldMDBServletClient.class
+org/jboss/as/quickstarts/domain/User.class
+org/jboss/as/quickstarts/mdb/HelloWorldQueueMDB.class
+org/jboss/as/quickstarts/domain/ManagedBeanUserDao.class
+org/jboss/as/quickstarts/domain/EJBUserDao.class

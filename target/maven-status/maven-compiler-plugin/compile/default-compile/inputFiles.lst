@@ -1,0 +1,8 @@
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/domain/UserDao.java
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/mdb/InjectUserFromQueueMDB.java
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/mdb/HelloWorldQueueMDB.java
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/domain/ManagedBeanUserDao.java
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/domain/User.java
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/domain/EJBUserDao.java
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/mdb/HelloWorldTopicMDB.java
+/Applications/Development/jboss-eap/jboss-eap-6.4.0.GA-quickstarts/helloworld-mdb/src/main/java/org/jboss/as/quickstarts/servlet/HelloWorldMDBServletClient.java
