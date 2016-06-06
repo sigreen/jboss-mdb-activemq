@@ -16,6 +16,9 @@
  */
 package org.jboss.as.quickstarts.domain;
 
+import javax.ejb.Local;
+
+@Local
 public interface UserDao {
     User getForUsername(String username);
 

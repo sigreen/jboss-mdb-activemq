@@ -25,30 +25,33 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
-import org.jboss.as.quickstarts.domain.EJBUserDao;
+import org.jboss.as.quickstarts.domain.UserDao;
 import org.jboss.as.quickstarts.domain.User;
 import org.jboss.ejb3.annotation.ResourceAdapter;
-import javax.enterprise.inject.New;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.ejb.EJB;
 
 /**
  * <p>
  * A simple Message Driven Bean that asynchronously receives and processes the messages that are sent to the queue.
  * </p>
- * 
+ *
  * @author Serge Pagop (spagop@redhat.com)
- * 
+ *
  */
 @MessageDriven(name = "InjectUserFromQueueMDB", activationConfig = {
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
         @ActivationConfigProperty(propertyName = "destination", propertyValue = "InjectUserFromQueue"),
         @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
         @ResourceAdapter(value="activemq-rar.rar")
+@TransactionAttribute(TransactionAttributeType.REQUIRED)
 public class InjectUserFromQueueMDB implements MessageListener {
 
     private final static Logger LOGGER = Logger.getLogger(InjectUserFromQueueMDB.class.toString());
-    
-    @Inject @New
-    private EJBUserDao userDao;
+
+    @EJB
+    private UserDao userDao;
 
     /**
      * @see MessageListener#onMessage(Message)
