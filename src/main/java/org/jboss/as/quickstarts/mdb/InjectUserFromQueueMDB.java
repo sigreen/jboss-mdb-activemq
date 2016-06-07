@@ -62,16 +62,21 @@ public class InjectUserFromQueueMDB implements MessageListener {
             if (rcvMessage instanceof TextMessage) {
                 msg = (TextMessage) rcvMessage;
                 LOGGER.info("Received Message from queue: " + msg.getText());
+                String[] csv = msg.getText().split(",");
+                String firstName = csv[1];
+                String lastName = csv[2];
+                String userName = csv[0];
+                
                 User newUser = new User();
-                newUser.setFirstName("Josh");
-                newUser.setLastName("Reagan");
-                newUser.setUsername("jreagan");
+                newUser.setFirstName(firstName);
+                newUser.setLastName(lastName);
+                newUser.setUsername(userName);
                 userDao.createUser(newUser);
                 LOGGER.info("A new user with id " + newUser.getId() + " has been created successfully");
             } else {
                 LOGGER.warning("Message of wrong type: " + rcvMessage.getClass().getName());
             }
-        } catch (JMSException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
